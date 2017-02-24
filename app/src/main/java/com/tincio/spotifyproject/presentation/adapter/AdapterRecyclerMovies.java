@@ -1,29 +1,6 @@
 package com.tincio.spotifyproject.presentation.adapter;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-import com.tincio.popularmovies.R;
-import com.tincio.popularmovies.data.services.response.Result;
-import com.tincio.popularmovies.presentation.application.PopularMoviesApplication;
-import com.tincio.popularmovies.presentation.util.Constants;
-import com.tincio.popularmovies.presentation.util.Utils;
-
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
-/**
- * Created by tincio on 03/09/16.
- */
 public class AdapterRecyclerMovies {// extends  RecyclerView.Adapter<AdapterRecyclerMovies.ViewHolderItem> {
 
     /*List<Result> listMovies;
