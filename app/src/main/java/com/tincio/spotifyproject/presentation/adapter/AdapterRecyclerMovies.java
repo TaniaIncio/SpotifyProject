@@ -24,9 +24,9 @@ import butterknife.OnClick;
 /**
  * Created by tincio on 03/09/16.
  */
-public class AdapterRecyclerMovies extends  RecyclerView.Adapter<AdapterRecyclerMovies.ViewHolderItem> {
+public class AdapterRecyclerMovies {// extends  RecyclerView.Adapter<AdapterRecyclerMovies.ViewHolderItem> {
 
-    List<Result> listMovies;
+    /*List<Result> listMovies;
     Context context;
     String favoritoOff= "ic_favorite_border_white_24dp";
     String favoritoOn= "ic_favorite_white_24dp";
@@ -138,5 +138,5 @@ public class AdapterRecyclerMovies extends  RecyclerView.Adapter<AdapterRecycler
     }
     public void updateItemList(Integer indice, Result movie){
         listMovies.set(indice, movie);
-    }
+    }*/
 }
