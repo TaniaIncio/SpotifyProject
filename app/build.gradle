@@ -43,5 +43,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //   compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    compile 'com.google.android.gms:play-services-appindexing:10.0.1'
+  //  compile 'com.google.android.gms:play-services-appindexing:10.0.1'
 }

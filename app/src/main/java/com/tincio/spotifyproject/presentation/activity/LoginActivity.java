@@ -30,15 +30,10 @@ import com.facebook.ProfileTracker;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.tincio.spotifyproject.R;
 
 import org.json.JSONObject;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -58,12 +53,12 @@ public class LoginActivity extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+   // private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+       // setContentView(R.layout.activity_login);
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
@@ -71,11 +66,11 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+      //  LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         // loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
         Log.e("Oncreate", "Oncreate");
 
-        loginButton.setBackgroundResource(R.mipmap.ic_launcher);
+      //  loginButton.setBackgroundResource(R.mipmap.ic_launcher);
         callbackManager = CallbackManager.Factory.create();
 
 
@@ -123,46 +118,9 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+       /* loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //  Log.e("Tokencall1234",AccessToken.getCurrentAccessToken().getToken());
-                /*
-                Profile perfil = com.facebook.Profile.getCurrentProfile();
-                name = perfil.getName();
-                uri = perfil.getProfilePictureUri(200, 200);
-                Log.e("Name","Namell :" +name);
-                Log.e("Apellido","Apellidolll:" +apellido);
-                Log.e("ErrorUri","uri"+uri);
-                /*
-
-                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                intent.putExtra("name", name);
-                intent.putExtra("apellido", apellido);
-                intent.putExtra("url", uri.toString());
-
-                startActivity(intent);
-                */
-
-                //2 forma
-                /*final AccessToken accessToken = loginResult.getAccessToken();
-
-
-                GraphRequestAsyncTask request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(JSONObject user, GraphResponse graphResponse) {
-
-                            String dos = user.optString("name");
-                            String tres =user.optString("email");
-
-                            Toast.makeText(getApplicationContext(), "Nombre es "+dos +"Email" +tres, Toast.LENGTH_SHORT).show();
-                        }
-                    }).executeAsync();
-
-                   */
-
-                //3 forma
-                // String profileImg = "https://graph.facebook.com/" + loginResult.getAccessToken().getUserId() + "/picture?type=large&width=200";
                 GraphRequest request = GraphRequest.newMeRequest(
                         loginResult.getAccessToken(),
                         new GraphRequest.GraphJSONObjectCallback() {
@@ -199,25 +157,6 @@ public class LoginActivity extends AppCompatActivity {
                 request.executeAsync();
 
 
-                //4 forma
-                /*
-                if(Profile.getCurrentProfile() == null) {
-                    mProfileTracker = new ProfileTracker() {
-                        @Override
-                        protected void onCurrentProfileChanged(Profile profile, Profile profile2) {
-                            Log.e("facebook - profile", profile2.getFirstName()+"+++"+profile2.getLinkUri());
-                            mProfileTracker.stopTracking();
-                        }
-                    };
-                    mProfileTracker.startTracking();
-                }
-                else {
-                    Profile profile = Profile.getCurrentProfile();
-                    Log.v("facebook - profile", profile.getFirstName()+profile.getLinkUri());
-                }
-                */
-
-
             }
 
             @Override
@@ -230,7 +169,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
 
         // && AccessToken.getCurrentAccessToken()!=null;
         /*
@@ -252,14 +191,14 @@ public class LoginActivity extends AppCompatActivity {
         //intent
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
        /* try {
             PackageInfo info = getPackageManager().getPackageInfo(
@@ -279,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+       // client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -315,17 +254,7 @@ public class LoginActivity extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("Login Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
+
 
     @Override
     public void onStart() {
@@ -333,8 +262,8 @@ public class LoginActivity extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+      //  client.connect();
+      //  AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
 
     @Override
@@ -343,7 +272,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
+      //  AppIndex.AppIndexApi.end(client, getIndexApiAction());
+      //  client.disconnect();
     }
 }
