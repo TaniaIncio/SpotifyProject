@@ -31,7 +31,8 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
 
-        <activity android:name=".presentation.activity.LoginActivity"></activity>
+        <activity android:name=".presentation.activity.LoginActivity" />
+        <activity android:name=".presentation.activity.ListaCancionesActivity"></activity>
     </application>
 
 </manifest>
